@@ -12,10 +12,10 @@ P.S. Функции вызывать не обязательно */
 let numberOfFilms;
 
 function startWork() {
-    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", '');
+    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", '').trim();
 
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", '');
+        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", '').trim();
     }
 }
 
@@ -32,8 +32,8 @@ const personalMovieDB = {
 function rememberMyFilms() {
     const numQuestion = 2;
     for (let i = 0; i < numQuestion; i++) {
-        const question1 = prompt("Один из последних просмотренных фильмов?", ''),
-        question2 = prompt("На сколько оцените его?", '');
+        const question1 = prompt("Один из последних просмотренных фильмов?", '').trim(),
+        question2 = prompt("На сколько оцените его?", '').trim();
         if (question1 == null || question1 == '' || question1.length >= 50 || 
         question2 == null || question2 == '' || question2.length >= 50) {
             console.log("Error");
@@ -74,7 +74,7 @@ showDB(personalMovieDB.privat);
 
 function writeYourGenres() {
     for (let i = 1; i <= 3; i++) {
-        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером: ${i}`);
+        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером: ${i}`).trim();
     }
 }
 
